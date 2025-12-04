@@ -30,7 +30,7 @@ public class Address {
             if(i % 2 == 1 && !Character.isDigit(c)) {
                 return false;
             }
-            }
+        }
         return true;
     }
 
