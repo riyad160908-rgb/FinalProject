@@ -34,7 +34,7 @@ public class Address {
         return true;
     }
 
-    public Address(Integer streetNo, String street, Province province, String city, String postalCode) {
+    public Address(int streetNo, String street, Province province, String city, String postalCode) {
         if(isPostalCodeValid(postalCode)) {
             this.streetNo = streetNo;
             this.street = street;
