@@ -1,5 +1,14 @@
 package org.riyad;
 
+import lombok.EqualsAndHashCode;
+import lombok.Getter;
+import lombok.Setter;
+import lombok.ToString;
+
+@Getter
+@Setter
+@ToString
+@EqualsAndHashCode
 public class Address {
     private int streetNo;
     private String street;
