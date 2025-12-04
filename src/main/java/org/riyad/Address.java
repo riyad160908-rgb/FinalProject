@@ -21,7 +21,7 @@ public class Address {
             return false;
         }
 
-        for(int i =0; i < postalCode.length(); i++) {
+        for(int i = 0; i < postalCode.length(); i++) {
             char c = postalCode.charAt(i);
 
             if(i % 2 == 0 && !Character.isLetter(c)) {
@@ -34,9 +34,21 @@ public class Address {
         return true;
     }
 
-
-
-
+    public Address(Integer streetNo, String street, Province province, String city, String postalCode) {
+        if(isPostalCodeValid(postalCode)) {
+            this.streetNo = streetNo;
+            this.street = street;
+            this.province = province;
+            this.city = city;
+            this.postalCode = postalCode.toUpperCase();
+        } else {
+            this.streetNo = 0;
+            this.street = null;
+            this.province = null;
+            this.city = null;
+            this.postalCode = null;
+        }
+    }
 
     public enum Province {
         QC,
