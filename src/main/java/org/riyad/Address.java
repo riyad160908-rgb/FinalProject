@@ -16,6 +16,23 @@ public class Address {
     private Province province;
     private String postalCode;
 
+    public static boolean isPostalCodeValid(String postalCode) {
+        if(postalCode == null || postalCode.length() != 6) {
+            return false;
+        }
+
+        for(int i =0; i < postalCode.length(); i++) {
+            char c = postalCode.charAt(i);
+
+            if(i % 2 == 0 && !Character.isLetter(c)) {
+                return false;
+            }
+            if(i % 2 == 1 && !Character.isDigit(c)) {
+                return false;
+            }
+            }
+        return true;
+    }
 
 
 
