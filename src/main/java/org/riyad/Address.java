@@ -6,4 +6,22 @@ public class Address {
     private String city;
     private Province province;
     private String postalCode;
+
+
+
+
+
+
+    public enum Province {
+        QC,
+        ON,
+        SK,
+        NS,
+        NB,
+        BC,
+        AB,
+        MB,
+        PE,
+        NL,
+    }
 }
