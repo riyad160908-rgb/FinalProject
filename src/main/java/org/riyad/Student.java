@@ -20,13 +20,17 @@ public class Student {
     private static int nextId = 1;
 
     public boolean registerCourse(Course course) {
-        if(registeredCourses.contains(course)) {
+        if(course == null ||registeredCourses.contains(course)) {
             return false;
         }
 
         registeredCourses.add(course);
 
         course.getRegisteredStudents().add(this);
+
+        for(Assignment assignment : course.getAssignments()) {
+            assignment.scores.add(null);
+        }
 
         return true;
     }
