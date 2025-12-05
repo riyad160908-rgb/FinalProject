@@ -1,4 +1,4 @@
-# FinalProject
+# School system (Final Project)
 Student name: Riyad Zebida
 
 Student ID: 2591660
