@@ -1,7 +1,14 @@
 package org.riyad;
 
+import lombok.EqualsAndHashCode;
+import lombok.Getter;
+import lombok.Setter;
+
 import java.util.ArrayList;
 
+@Setter
+@Getter
+@EqualsAndHashCode
 public class Course {
     private String courseId;
     private String courseName;
