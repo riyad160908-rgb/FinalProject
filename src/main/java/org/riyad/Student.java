@@ -25,6 +25,7 @@ public class Student {
         this.gender = gender;
         this.department = department;
         this.address = address;
+        this.registeredCourses = new ArrayList<>();
     }
 
     public boolean registerCourse(Course course) {
