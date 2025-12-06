@@ -19,6 +19,14 @@ public class Student {
 
     private static int nextId = 1;
 
+    public Student(String studentName, Gender gender, Department department, Address address) {
+        this.studentId = String.format("S%05d", nextId++);
+        this.studentName = studentName;
+        this.gender = gender;
+        this.department = department;
+        this.address = address;
+    }
+
     public boolean registerCourse(Course course) {
         if(course == null ||registeredCourses.contains(course)) {
             return false;
@@ -28,9 +36,7 @@ public class Student {
 
         course.getRegisteredStudents().add(this);
 
-        for(Assignment assignment : course.getAssignments()) {
-            assignment.scores.add(null);
-        }
+
 
         return true;
     }
