@@ -43,6 +43,22 @@ public class Student {
         return true;
     }
 
+    public boolean dropCourse(Course course) {
+        if(course == null || !registeredCourses.contains(course)) {
+            return false;
+        }
+
+        registeredCourses.remove(course);
+
+        int studentIdx = course.getRegisteredStudents().indexOf(this);
+        registeredCourses.remove(course);
+        course.getRegisteredStudents().remove(this);
+        for(Assignment a : course.getAssignments()) {
+            a.scores.remove(studentIdx);
+        }
+        return true;
+    }
+
 
 
     public enum Gender {
