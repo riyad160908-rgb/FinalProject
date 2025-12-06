@@ -37,10 +37,12 @@ public class Student {
 
         course.getRegisteredStudents().add(this);
 
-
-
+        for(Assignment a : course.getAssignments()) {
+            a.scores.add(null);
+        }
         return true;
     }
+
 
 
     public enum Gender {
