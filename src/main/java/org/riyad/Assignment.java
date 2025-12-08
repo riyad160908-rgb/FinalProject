@@ -1,7 +1,11 @@
 package org.riyad;
 
+import lombok.Getter;
+
 import java.util.ArrayList;
 
+
+@Getter
 public class Assignment {
     private String assignmentId;
     private String assignmentName;
