@@ -48,14 +48,14 @@ public class Student {
             return false;
         }
 
-        registeredCourses.remove(course);
-
         int studentIdx = course.getRegisteredStudents().indexOf(this);
         registeredCourses.remove(course);
-        course.getRegisteredStudents().remove(this);
+        course.getRegisteredStudents().remove(studentIdx);
 
         for(Assignment a : course.getAssignments()) {
-            a.getScores().remove(studentIdx);
+            if(studentIdx < a.getScores().size()) {
+                a.getScores().remove(studentIdx);
+            }
         }
         return true;
     }
