@@ -29,7 +29,7 @@ public class Student {
     }
 
     public boolean registerCourse(Course course) {
-        if(course == null ||registeredCourses.contains(course)) {
+        if(course == null || registeredCourses.contains(course)) {
             return false;
         }
 
@@ -38,7 +38,7 @@ public class Student {
         course.getRegisteredStudents().add(this);
 
         for(Assignment a : course.getAssignments()) {
-            a.scores.add(null);
+            a.getScores().add(null);
         }
         return true;
     }
@@ -53,8 +53,9 @@ public class Student {
         int studentIdx = course.getRegisteredStudents().indexOf(this);
         registeredCourses.remove(course);
         course.getRegisteredStudents().remove(this);
+
         for(Assignment a : course.getAssignments()) {
-            a.scores.remove(studentIdx);
+            a.getScores().remove(studentIdx);
         }
         return true;
     }
