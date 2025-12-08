@@ -60,7 +60,9 @@ public class Student {
         return true;
     }
 
-
+    public String toSimplifiedString() {
+        return studentId + " " + studentName + " " + department.getDepartmentName();
+    }
 
     public enum Gender {
         MALE,
