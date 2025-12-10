@@ -3,6 +3,7 @@ package org.riyad;
 import lombok.Getter;
 
 import java.util.ArrayList;
+import java.util.Random;
 
 
 @Getter
@@ -16,11 +17,6 @@ public class Assignment {
 
 
     public void calcAssignmetnAvg() {
-        if (scores.isEmpty()) {
-            System.out.println("No scores for " + assignmentName);
-            return;
-        }
-
         int sum = 0;
         int count = 0;
 
@@ -38,5 +34,29 @@ public class Assignment {
 
         double avg =  (double) sum / count;
         System.out.println("Average for " + assignmentName + " is " + avg);
+    }
+
+    public void generateRandomScore() {
+        Random random = new Random();
+
+        for (int i = 0; i < scores.size(); i++) {
+
+            int randomNum = random.nextInt(11);
+            int score = switch (randomNum) {
+
+                case 0 -> random.nextInt(60);
+
+                case 1, 2 -> 60 + random.nextInt(10);
+
+                case 3, 4 -> 70 + random.nextInt(10);
+
+                case 5, 6, 7, 8 -> 80 + random.nextInt(10);
+
+                case 9, 10 -> 90 + random.nextInt(11);
+
+                default -> 0;
+            };
+            scores.set(i, score);
+        }
     }
 }
