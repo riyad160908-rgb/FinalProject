@@ -59,4 +59,12 @@ public class Assignment {
             scores.set(i, score);
         }
     }
+
+    public String toString() {
+        return "Assignment{" +
+                "assignmentId='" + assignmentId + '\'' +
+                ", assignmentName='" + assignmentName + '\'' +
+                ", weight=" + weight +
+                '}';
+    }
 }
