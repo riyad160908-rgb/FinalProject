@@ -35,4 +35,19 @@ public class Course {
         }
         return sum == 100;
     }
+
+    public boolean registerStudent(Student student) {
+        if (registeredStudents.contains(student)) {
+            return false;
+        }
+
+        registeredStudents.add(student);
+
+        for (Assignment assignment : assignments) {
+            assignment.getScores().add(null);
+        }
+        return true;
+    }
+
+
 }
