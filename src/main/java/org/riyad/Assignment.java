@@ -11,12 +11,21 @@ public class Assignment {
     private String assignmentId;
     private String assignmentName;
     private double weight;
+    private int maxScore;
     private ArrayList<Integer> scores = new ArrayList<>();
 
     private static int nextId = 1;
 
 
-    public void calcAssignmetnAvg() {
+    public Assignment(String assignmentName, double weight, int maxScore) {
+        this.assignmentId = String.format("A%02d", nextId++);
+        this.assignmentName = assignmentName;
+        this.weight = weight;
+        this.maxScore = maxScore;
+        this.scores = new ArrayList<>();
+    }
+
+    public void calcAssignmentAvg() {
         int sum = 0;
         int count = 0;
 
