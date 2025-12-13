@@ -49,5 +49,22 @@ public class Course {
         return true;
     }
 
+    public int[] calcStudentsAverage() {
+        int[] result = new int[registeredStudents.size()];
+
+        for (int i = 0; i < registeredStudents.size(); i++) {
+            double total = 0;
+
+            for (Assignment assignment : assignments) {
+                Integer score = assignment.getScores().get(i);
+                if (score != null) {
+                    total += score * (assignment.getWeight() / 100.0);
+                }
+            }
+            result[i] = (int) Math.round(total);
+        }
+        return result;
+    }
+
 
 }
