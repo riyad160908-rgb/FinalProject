@@ -94,6 +94,49 @@ public class Course {
         calcStudentsAverage();
     }
 
+    public void displayScores() {
+        System.out.println("Course: " + courseName + "(" + courseId + ")");
+
+        System.out.printf("%20s", "");
+        for (Assignment assignment : assignments) {
+            System.out.printf("%15s", assignment.getAssignmentName());
+        }
+        System.out.printf("%15s%n", "Final Score");
+
+        int[] finalScores = calcStudentsAverage();
+
+        for (int i = 0; i < registeredStudents.size(); i++) {
+            Student student = registeredStudents.get(i);
+            System.out.printf("%20s", student.getStudentName());
+
+            for (Assignment assignment : assignments) {
+                Integer score = assignment.getScores().get(i);
+                if (score != null) {
+                    System.out.printf("%15d", score);
+                } else {
+                    System.out.printf("%15s", "Invalid");
+                }
+            }
+            System.out.printf("%15d%n", finalScores[i]);
+        }
+
+        System.out.printf("%20s", "Average");
+        for (Assignment assignment : assignments) {
+            int sum = 0;
+            int count = 0;
+
+            for (Integer s : assignment.getScores()) {
+                if (s != null) {
+                    sum += s;
+                    count++;
+                }
+            }
+
+            double avg = (count == 0) ? 0 : (double) sum / count;
+            System.out.printf("%15.0f", avg);
+        }
+        System.out.println();
+    }
 }
 
 
