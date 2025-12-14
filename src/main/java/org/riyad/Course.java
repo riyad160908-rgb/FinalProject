@@ -141,6 +141,42 @@ public class Course {
     public String toSimplifiedString() {
         return courseId + " " + courseName + " " + credits + " " + department.getDepartmentName();
     }
+
+    public String toString() {
+        String assignmentList = "";
+        if (assignments.isEmpty()) {
+            assignmentList = "No assignments";
+        } else {
+            for (int i = 0; i < assignments.size(); i++) {
+                assignmentList += assignments.get(i).toString();
+                if (i < assignments.size() - 1) {
+                    assignmentList += ", ";
+                }
+            }
+        }
+
+        String studentList = "";
+        if (registeredStudents.isEmpty()) {
+            studentList = "No students registered";
+        } else {
+            for (int i = 0; i < registeredStudents.size(); i++) {
+                studentList += registeredStudents.get(i).toSimplifiedString();
+                if (i < registeredStudents.size() - 1) {
+                    studentList += ", ";
+                }
+            }
+        }
+
+        return "Course{" +
+                "courseId='" + courseId + '\'' +
+                ", courseName='" + courseName + '\'' +
+                ", credits=" + credits +
+                ", department='" + department.getDepartmentName() + '\'' +
+                ", assignments=[" + assignmentList + "]" +
+                ", registeredStudents=[" + studentList + "]" +
+                ", assignmentWeightsValid=" + (isAssignmentWeightValid() ? "Yes" : "No") +
+                '}';
+    }
 }
 
 
