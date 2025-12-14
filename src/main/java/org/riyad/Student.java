@@ -87,7 +87,7 @@ public class Student {
                 ", studentName='" + studentName + '\'' +
                 ", gender=" + gender +
                 ", address=" + address +
-                ", department=" + department +
+                ", department=" + department.getDepartmentName() +
                 ", registeredCourses=[" + courses + "]" +
                 '}';
     }
