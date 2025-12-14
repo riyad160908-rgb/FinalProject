@@ -5,6 +5,7 @@ import lombok.Getter;
 import lombok.Setter;
 
 import java.util.ArrayList;
+import java.util.Random;
 
 @Setter
 @Getter
@@ -76,9 +77,23 @@ public class Course {
         for (int i = 0; i < registeredStudents.size(); i++) {
             newAssignment.getScores().add(null);
         }
-
         assignments.add(newAssignment);
         return true;
     }
 
+    public void generateScores() {
+        Random random = new Random();
+
+        for(Assignment assignment : assignments) {
+
+            for(int i = 0; i < registeredStudents.size(); i++) {
+                int randomScore = random.nextInt(assignment.getMaxScore() + 1);
+                assignment.getScores().set(i, randomScore);
+            }
+        }
+        calcStudentsAverage();
+    }
+
 }
+
+
