@@ -88,7 +88,7 @@ public class Student {
                 ", gender=" + gender +
                 ", address=" + address +
                 ", department=" + department +
-                ", registeredCourses=" + registeredCourses +
+                ", registeredCourses=[" + courses + "]" +
                 '}';
     }
 
