@@ -66,5 +66,19 @@ public class Course {
         return result;
     }
 
+    public boolean addAssignment(String assignmentName, double weight, int maxScore) {
+        if(assignmentName == null || assignmentName.isBlank() || weight <= 0 || maxScore <= 0) {
+            return false;
+        }
+
+        Assignment newAssignment = new Assignment(assignmentName, weight, maxScore);
+
+        for (int i = 0; i < registeredStudents.size(); i++) {
+            newAssignment.getScores().add(null);
+        }
+
+        assignments.add(newAssignment);
+        return true;
+    }
 
 }
