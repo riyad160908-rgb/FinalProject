@@ -15,6 +15,7 @@ class StudentTest {
 
         boolean expected = false;
         boolean actual = student.registerCourse(null);
+
         Assertions.assertEquals(expected, actual);
     }
 
@@ -26,6 +27,7 @@ class StudentTest {
 
         boolean expected = true;
         boolean actual = student.registerCourse(course);
+
         Assertions.assertEquals(expected, actual);
     }
 
@@ -39,6 +41,7 @@ class StudentTest {
 
         boolean expected = false;
         boolean actual = student.registerCourse(course);
+
         Assertions.assertEquals(expected, actual);
     }
 
@@ -49,6 +52,7 @@ class StudentTest {
 
         boolean expected = false;
         boolean actual = student.dropCourse(null);
+
         Assertions.assertEquals(expected, actual);
     }
 
@@ -60,6 +64,7 @@ class StudentTest {
 
         boolean expected = false;
         boolean actual = student.dropCourse(course);
+
         Assertions.assertEquals(expected, actual);
     }
 
@@ -73,6 +78,7 @@ class StudentTest {
 
         boolean expected = true;
         boolean actual = student.dropCourse(course);
+
         Assertions.assertEquals(expected, actual);
     }
 
@@ -83,6 +89,7 @@ class StudentTest {
 
         String expected = s.getStudentId() + "S000001 | Riyad | null";
         String actual = s.toSimplifiedString();
+
         Assertions.assertEquals(expected, actual);
     }
 
@@ -106,6 +113,7 @@ class StudentTest {
 
         String expected = s.getStudentId() + "S000001 | Riyad | Science";
         String actual = s.toSimplifiedString();
-        assertEquals(expected, actual);
+
+        Assertions.assertEquals(expected, actual);
     }
 }
