@@ -55,6 +55,9 @@ public class Address {
         }
     }
 
+    /**
+     * enumeration for provinces
+     */
     public enum Province {
         QC,
         ON,
