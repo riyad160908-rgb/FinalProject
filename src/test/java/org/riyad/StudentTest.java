@@ -83,7 +83,7 @@ class StudentTest {
     }
 
     @Test
-    @DisplayName("toSimplifiedString: null -> null")
+    @DisplayName("toSimplifiedString: null -> S000001 | Riyad | null")
     void toSimplifiedString1() {
         Student s = new Student("Riyad", Student.Gender.MALE, null, null);
 
@@ -94,7 +94,7 @@ class StudentTest {
     }
 
     @Test
-    @DisplayName("toSimplifiedString: empty -> empty")
+    @DisplayName("toSimplifiedString: empty -> S000001 | Riyad | ")
     void toSimplifiedString2() {
         Department dep = new Department("");
         Student s = new Student("Riyad", Student.Gender.MALE, dep, null);
@@ -106,7 +106,7 @@ class StudentTest {
     }
 
     @Test
-    @DisplayName("toSimplifiedString: normal case -> ")
+    @DisplayName("toSimplifiedString: normal case -> S000001 | Riyad | Science")
     void toSimplifiedString3() {
         Department dep = new Department("Science");
         Student s = new Student("Riyad", Student.Gender.MALE, dep, null);
