@@ -28,6 +28,14 @@ public class Student {
         this.registeredCourses = new ArrayList<>();
     }
 
+    /**
+     * Registers a student to a course:
+     * Adds the course to the student's registered list,
+     * adds the student to the course's student list,
+     * and appends a null score for each assignment.
+     * @param course the course that the student will be registered in
+     * @return true if registration succeeds, false if already registered
+     */
     public boolean registerCourse(Course course) {
         if(course == null || registeredCourses.contains(course)) {
             return false;
@@ -43,6 +51,13 @@ public class Student {
         return true;
     }
 
+    /**
+     * Drops a course for a student:
+     * removes the course from the registeredCourses list,
+     * and removes the student from the course's registeredStudents list
+     * @param course the course to drop for the student
+     * @return true if successful, false if the course is not in the student's registeredCourses list
+     */
     public boolean dropCourse(Course course) {
         if(course == null || !registeredCourses.contains(course)) {
             return false;
@@ -60,6 +75,10 @@ public class Student {
         return true;
     }
 
+    /**
+     * Returns a simplified string with studentId, studentName, and departmentName.
+     * @return simplified student information
+     */
     public String toSimplifiedString() {
         return studentId + " " + studentName + " " + department.getDepartmentName();
     }
@@ -92,6 +111,9 @@ public class Student {
                 '}';
     }
 
+    /**
+     * enumeration for gender
+     */
     public enum Gender {
         MALE,
         FEMALE,
