@@ -21,7 +21,7 @@ public class Student {
 
     public Student(String studentName, Gender gender, Department department, Address address) {
         this.studentId = String.format("S%05d", nextId++);
-        this.studentName = studentName;
+        this.studentName = Util.toTitleCase(studentName);
         this.gender = gender;
         this.department = department;
         this.address = address;
