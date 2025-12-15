@@ -17,6 +17,7 @@ public class Course {
     private Department department;
     private ArrayList<Assignment> assignments;
     private ArrayList<Student> registeredStudents;
+    private ArrayList<Integer> finalScores;
 
     private static int nextId = 1;
 
@@ -27,6 +28,7 @@ public class Course {
         this.department = department;
         this.assignments = new ArrayList<>();
         this.registeredStudents = new ArrayList<>();
+        this.finalScores = new ArrayList<>();
     }
 
     public boolean isAssignmentWeightValid() {
@@ -38,7 +40,7 @@ public class Course {
     }
 
     public boolean registerStudent(Student student) {
-        if (registeredStudents.contains(student)) {
+        if (registeredStudents.contains(student) || student == null) {
             return false;
         }
 
@@ -47,6 +49,7 @@ public class Course {
         for (Assignment assignment : assignments) {
             assignment.getScores().add(null);
         }
+        finalScores.add(null);
         return true;
     }
 
