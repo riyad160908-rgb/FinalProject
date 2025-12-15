@@ -1,6 +1,13 @@
 package org.riyad;
 
 public class Util {
+
+    /**
+     * converts a string into title case, first letter of each word is capital,
+     * rest is lowercase, space between both words
+     * @param str the string
+     * @return the string converted into title case
+     */
     public static String toTitleCase(String str) {
         if (str == null || str.isBlank()) {
             return str;
