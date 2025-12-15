@@ -31,6 +31,10 @@ public class Course {
         this.finalScores = new ArrayList<>();
     }
 
+    /**
+     * checks if the sum of weights of all assignments of that course equals to 100%
+     * @return true if sum is equal to 100%, false otherwise
+     */
     public boolean isAssignmentWeightValid() {
         double sum = 0;
         for (Assignment assignment : assignments) {
@@ -39,6 +43,12 @@ public class Course {
         return sum == 100;
     }
 
+    /**
+     * registers a student into this course:
+     * adds student to list and adds a null score for each assignment.
+     * @param student the student to register in the course
+     * @return true if successful, false if already registered
+     */
     public boolean registerStudent(Student student) {
         if (registeredStudents.contains(student) || student == null) {
             return false;
@@ -53,6 +63,10 @@ public class Course {
         return true;
     }
 
+    /**
+     * calculates and returns each student's weighted final score.
+     * @return array in which each element is the student's average
+     */
     public int[] calcStudentsAverage() {
         int[] result = new int[registeredStudents.size()];
 
@@ -70,6 +84,13 @@ public class Course {
         return result;
     }
 
+    /**
+     * adds a new assignment to the course
+     * @param assignmentName the name of the assignment
+     * @param weight the weight of the assignment
+     * @param maxScore the max score of the assignment
+     * @return true if assignment is added, false otherwise
+     */
     public boolean addAssignment(String assignmentName, double weight, int maxScore) {
         if(assignmentName == null || assignmentName.isBlank() || weight <= 0 || maxScore <= 0) {
             return false;
@@ -84,6 +105,10 @@ public class Course {
         return true;
     }
 
+    /**
+     * generates random scores for each assignment and student,
+     * and calculates the final score for each student.
+     */
     public void generateScores() {
         Random random = new Random();
 
@@ -97,6 +122,10 @@ public class Course {
         calcStudentsAverage();
     }
 
+    /**
+     * displays the scores of a course in a table,
+     * with the assignment averages and student weighted average
+     */
     public void displayScores() {
         System.out.println("Course: " + courseName + "(" + courseId + ")");
 
@@ -141,6 +170,11 @@ public class Course {
         System.out.println();
     }
 
+    /**
+     * returns a simple course description with:
+     * courseId, courseName, credits, and departmentName.
+     * @return simple course information
+     */
     public String toSimplifiedString() {
         return courseId + " " + courseName + " " + credits + " " + department.getDepartmentName();
     }
