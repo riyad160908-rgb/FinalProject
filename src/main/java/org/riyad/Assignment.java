@@ -16,7 +16,6 @@ public class Assignment {
 
     private static int nextId = 1;
 
-
     public Assignment(String assignmentName, double weight, int maxScore) {
         this.assignmentId = String.format("A%02d", nextId++);
         this.assignmentName = assignmentName;
