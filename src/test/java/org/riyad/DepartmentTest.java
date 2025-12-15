@@ -1,5 +1,6 @@
 package org.riyad;
 
+import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 
@@ -12,7 +13,8 @@ class DepartmentTest {
     void isDepartmentNameValid1() {
         boolean expected = false;
         boolean actual = Department.isDepartmentNameValid(null);
-        assertEquals(expected, actual);
+
+        Assertions.assertEquals(expected, actual);
     }
 
     @Test
@@ -20,7 +22,8 @@ class DepartmentTest {
     void isDepartmentNameValid2() {
         boolean expected = false;
         boolean actual = Department.isDepartmentNameValid("");
-        assertEquals(expected, actual);
+
+        Assertions.assertEquals(expected, actual);
     }
 
     @Test
@@ -28,6 +31,7 @@ class DepartmentTest {
     void isDepartmentNameValid3() {
         boolean expected = true;
         boolean actual = Department.isDepartmentNameValid("Computer Science");
-        assertEquals(expected, actual);
+
+        Assertions.assertEquals(expected, actual);
     }
 }
