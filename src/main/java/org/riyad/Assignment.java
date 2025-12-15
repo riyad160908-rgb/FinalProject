@@ -25,6 +25,9 @@ public class Assignment {
         this.scores = new ArrayList<>();
     }
 
+    /**
+     * calculates and returns the average score for the assignment
+     */
     public void calcAssignmentAvg() {
         int sum = 0;
         int count = 0;
@@ -45,6 +48,9 @@ public class Assignment {
         System.out.println("Average for " + assignmentName + " is " + avg);
     }
 
+    /**
+     * generates a random score for all students in the assignment
+     */
     public void generateRandomScore() {
         Random random = new Random();
 
