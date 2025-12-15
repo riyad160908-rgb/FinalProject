@@ -13,6 +13,7 @@ class AddressTest {
     void isPostalCodeValid1() {
         boolean expected = false;
         boolean actual = Address.isPostalCodeValid(null);
+
         Assertions.assertEquals(expected, actual);
     }
 
@@ -21,6 +22,7 @@ class AddressTest {
     void isPostalCodeValid2() {
         boolean expected = false;
         boolean actual = Address.isPostalCodeValid("");
+
         Assertions.assertEquals(expected, actual);
     }
 
@@ -29,6 +31,7 @@ class AddressTest {
     void isPostalCodeValid3() {
         boolean expected = true;
         boolean actual = Address.isPostalCodeValid("A3B4C8");
+
         Assertions.assertEquals(expected, actual);
     }
 }
